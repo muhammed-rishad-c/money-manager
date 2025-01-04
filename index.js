@@ -21,8 +21,8 @@ app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
 const db = new pg.Client({
     user: "postgres",
     host: "localhost",
-    database: "hostel",
-    password: "rishadkhalid",
+    database: "*****",
+    password: "*******",
     port: 5432,
 });
 
