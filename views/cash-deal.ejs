@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Financial Tracker</title>
+  <style>
+    body {
+      font-family: 'Garamond', serif;
+      background-color: #121212;
+      background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/dark_embroidery.png');
+      color: #f5f5f5;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .container {
+      background-color: #1f1f1f;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      text-align: center;
+      width: 350px;
+      animation: slideIn 1s ease-in-out;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #d4af37;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    .dropdown, .money-input, .date-section {
+      margin-bottom: 20px;
+    }
+
+    select, input[type="number"], input[type="date"] {
+      padding: 12px;
+      width: calc(100% - 24px);
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #2a2a2a;
+      color: #f5f5f5;
+    }
+
+    button {
+      padding: 12px 20px;
+      background-color: #d4af37;
+      color: #121212;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #b8860b;
+    }
+  </style>
+</head>
+
+<body>
+  <form action="/cash-deal" method="post">
+    <div class="container">
+      <h1>Paisa Deal</h1>
+      <div class="dropdown">
+        <select name="dropdown1">
+          <option value="">Select</option>
+          <% name.forEach(element => { %>
+            <option value="<%= element.name %>"><%= element.name %></option>
+          <% }) %>
+        </select>
+      </div>
+      <div class="dropdown">
+        <select name="dropdown2">
+          <option value="">Select</option>
+          <% name.forEach(element => { %>
+            <option value="<%= element.name %>"><%= element.name %></option>
+          <% }) %>
+        </select>
+      </div>
+      <div class="money-input">
+        <input type="number" name="money" placeholder="Enter amount">
+      </div>
+      <div class="date-section">
+        <input type="date" name="date">
+      </div>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+</body>
+
+</html>

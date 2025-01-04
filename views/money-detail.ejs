@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page</title>
+  <style>
+    body {
+      font-family: 'Garamond', serif;
+      background-color: #121212;
+      background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/dark_embroidery.png');
+      color: #f5f5f5;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .container {
+      background-color: #1f1f1f;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      text-align: center;
+      width: 350px;
+      animation: slideIn 1s ease-in-out;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .profile-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #d4af37;
+      transition: transform 0.3s;
+    }
+
+    .profile-image:hover {
+      transform: scale(1.05);
+    }
+
+    .name {
+      font-size: 24px;
+      font-weight: bold;
+      color: #d4af37;
+      margin-top: 20px;
+    }
+
+    .info {
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .info div {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 10px 0;
+    }
+
+    .info div span {
+      font-size: 18px;
+      color: #f5f5f5;
+    }
+
+    .info a {
+      text-decoration: none;
+      color: #1f1f1f;
+      background-color: #d4af37;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .info a:hover {
+      background-color: #b8860b;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <% if(locals.user){ %>
+      <img src="/uploads/<%= user.photo %>" alt="<%= user.name %>" class="profile-image">
+      <h2 class="name"><%= user.name %></h2>
+      <div class="info">
+        <div>
+          <span>To get: <%= toget %></span>
+          <a href="/moredetailget/<%= user.name %>">Details</a>
+        </div>
+        <div>
+          <span>To give: <%= togive %></span>
+          <a href="/moredetailgive/<%= user.name %>">Details</a>
+        </div>
+      </div>
+    <% } else { %>
+      <h2 class="name">vernilla</h2>
+    <% } %>
+  </div>
+</body>
+
+</html>

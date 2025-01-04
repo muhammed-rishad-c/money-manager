@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Details Adiyil</title>
+  <style>
+    body {
+      font-family: 'Garamond', serif;
+      background-color: #121212;
+      background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/dark_embroidery.png');
+      color: #f5f5f5;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .container {
+      background-color: #1f1f1f;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      text-align: center;
+      width: 350px;
+      animation: slideIn 1s ease-in-out;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #d4af37;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="file"] {
+      display: block;
+      margin: 15px auto;
+      padding: 12px;
+      width: calc(100% - 24px);
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #2a2a2a;
+      color: #f5f5f5;
+    }
+
+    button {
+      padding: 12px 20px;
+      background-color: #d4af37;
+      color: #121212;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #b8860b;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Details Adiyil</h1>
+    <form action="/member" method="post" enctype="multipart/form-data">
+      <input type="text" name="name" placeholder="Enter your name">
+      <input type="file" name="photo">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+
+</html>
